@@ -1,0 +1,120 @@
+\newcommand{\name}{systemName}
+% \renewcommand{\name}{main\xspace}
+
+% ==============================================================================
+% Inline comments
+% ==============================================================================
+
+\newcommand{\notes}[1]{}
+\renewcommand{\notes}[1]{#1} % Comment this to disable comments
+\newcommand{\authA}[1]{\notes{\textcolor{red}{AA: {#1}\xspace{}}}}
+\newcommand{\authB}[1]{\notes{\textcolor{Green}{AB: {#1}\xspace{}}}}
+\newcommand{\authC}[1]{\notes{\textcolor{purple}{AC: {#1}\xspace{}}}}
+\newcommand{\authD}[1]{\notes{\textcolor{violet}{AD: {#1}\xspace{}}}}
+\newcommand{\authE}[1]{\notes{\textcolor{Magenta}{AE: {#1}\xspace{}}}}
+
+\newcommand{\todo}[1]{\notes{\textcolor{Aquamarine}{TODO: {#1}\xspace{}}}}
+\newcommand{\help}[1]{\notes{\textcolor{Aquamarine}{HELP: {#1}\xspace{}}}}
+\newcommand{\goal}[1]{\notes{\textcolor{blue}{GOAL: {#1}\xspace{}}}}
+
+\newcommand{\cut}[1]{} % Content that can be cut
+% \renewcommand{\cut}[1]{\textcolor{gray}{#1}} % Comment this line to apply the cut.
+
+% ==============================================================================
+% Wrappers
+% ==============================================================================
+
+\newcommand{\heading}[1]{\smallskip\noindent\textbf{#1.}}
+\newcommand{\subheading}[1]{\underline{\emph{#1.}}}
+
+% \titleformat*{\subparagraph}{\itshape}
+\newcommand{\myparagraph}[1]{\paragraph{#1.}}
+\newcommand{\mysubparagraph}[1]{\subparagraph{#1.}}
+
+\newcommand{\eg}{e.g.\xspace}
+\newcommand{\Eg}{E.g.\xspace}
+\newcommand{\etc}{etc.\@\xspace}
+\newcommand{\cf}{{cf.}\xspace}
+\newcommand{\ie}{i.e.\xspace}
+\newcommand{\Ie}{I.e.\xspace}
+\newcommand{\etal}{et al.\xspace}
+
+\newenvironment{packeditemize}{
+\begin{itemize}[topsep=0pt, noitemsep, leftmargin=*]}
+{\end{itemize}}
+
+\newenvironment{packedenumerate}[1][(\arabic{*})]{
+\begin{enumerate}[topsep=0pt, noitemsep, leftmargin=*, label=#1]}
+{\end{enumerate}}
+
+% \newcommand\vertarrowbox[3][6ex]{%
+%   \begin{array}[t]{@{}c@{}} #2 \\
+%   \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\\
+%   \makebox[0pt]{\scriptsize#3}
+%   \end{array}%
+% }
+
+% Circledsteps
+% https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/circledsteps/circledsteps-manual.pdf
+% \pgfkeys{/csteps/inner ysep=4pt}
+% \pgfkeys{/csteps/inner color=white}
+% \pgfkeys{/csteps/fill color=black}
+
+% ==============================================================================
+% Theorems, lemmas, and definitions
+% ==============================================================================
+% https://www.overleaf.com/learn/latex/Theorems_and_proofs
+% https://gejian.wordpress.com/2010/02/16/autoref-in-latex/
+% https://11011110.github.io/blog/2018/05/25/lipics-autoref-lemma.html
+\newtheoremstyle{mytheoremstyle} % name
+    {\topsep}                    % Space above
+    {\topsep}                    % Space below
+    {\itshape}                   % Body font
+    {}                           % Indent amount
+    {\scshape}                   % Theorem head font
+    {.}                          % Punctuation after theorem head
+    {.5em}                       % Space after theorem head
+    {}  % Theorem head spec (can be left empty, meaning ‘normal’)
+\theoremstyle{mytheoremstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}  % To have non-numbered theorems
+\newtheorem{corollary}{Corollary}[theorem] % not needed for SIGCOMM template
+
+\newtheorem{lemma}[theorem]{Lemma} % not needed for SIGCOMM template
+% \newtheorem{lemma}{Lemma}[section] % If we want to have lemmas numbered separately from theorems
+\newcommand{\lemmaautorefname}{Lemma}
+
+\theoremstyle{mytheoremstyle}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{plain}
+\newtheorem{conjecture}{Conjecture}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\renewcommand{\equationautorefname}{Eq.}
+\renewcommand{\figureautorefname}{Fig.}
+
+% ==============================================================================
+% Highlighting and tables
+% ==============================================================================
+
+% % Highlighting
+% \DeclareRobustCommand{\hlviolet}[1]{{\sethlcolor{violet!15}\hl{#1}}}
+% \DeclareRobustCommand{\hlred}[1]{{\sethlcolor{red!15}\hl{#1}}}
+% \DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{ForestGreen!20}\hl{#1}}}
+% \DeclareRobustCommand{\hlblue}[1]{{\sethlcolor{blue!15}\hl{#1}}}
+
+% % TabularX
+% https://texdoc.org/serve/tabularx/0
+% \def\tabularxcolumn#1{m{#1}}  % convert column from p to m.
+% \newcolumntype{Y}{>{\centering\arraybackslash}X}
+% \newcolumntype{Y}{>{\small\raggedright\arraybackslash}X}
+% \newcolumntype{Y}{>{\hsize=.5\hsize\linewidth=\hsize}X}
+% \newcolumntype{Y}{>{\hsize=1.5\hsize\linewidth=\hsize}X}
+
+% ==============================================================================
+% Colors
+% ==============================================================================
+\definecolor{TableGray}{rgb}{0.88,0.88,0.88}

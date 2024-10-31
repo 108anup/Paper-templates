@@ -1,0 +1,47 @@
+% TODO fill title
+\newcommand{\PaperTitle}{My fancy title}
+% TODO fill in your paper number when you get it
+\newcommand{\PaperNumber}{XXX}
+
+\input{pre.tex}
+
+\documentclass[10pt,sigconf,letterpaper,anonymous,nonacm]{acmart}
+
+\input{headers.tex}
+\input{macros.tex}
+
+
+\begin{document}
+
+\input{post.tex}
+
+\title{\PaperTitle}
+
+\begin{abstract}
+A cite so this compiles~\cite{waldspurger02}.
+\end{abstract}
+
+\maketitle
+
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+% \input{sections/related.tex}
+\input{sections/design.tex}
+\input{sections/evaluation.tex}
+\input{sections/acknowledgements.tex}
+\input{sections/availability.tex}
+
+\appendix
+
+\section{Ethics}
+% Note from the CFP that this section must include a statement about
+% ethical issues; papers that do not include such a statement may be
+% rejected.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% We're in the endgame now
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references.bib}
+
+\end{document}

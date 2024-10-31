@@ -1,0 +1,116 @@
+\input{pre.tex}
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{styles/cmu-titlepage2}
+\usepackage{times}
+
+%Check if we are compiling under latex or pdflatex
+\ifx\pdftexversion\undefined
+  \usepackage[dvips]{graphics}
+\else
+  \usepackage[pdftex]{graphics}
+\fi
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{tabularx}
+% https://tex.stackexchange.com/questions/3802/how-to-get-doi-links-in-bibliography
+% \usepackage{natbib}
+\usepackage{doi}
+\usepackage[]{hyperref}         % ...clickable refs within pdf...
+\hypersetup{                    % ...like so
+  colorlinks,
+  linkcolor={green!80!black},
+  citecolor={red!70!black},
+  urlcolor={blue!70!black}
+}
+% \usepackage[
+% %backref controls whether the bibliography has a list of backreferences
+% %to where the citaiton is used
+% %backref,
+% pageanchor=true,
+% plainpages=false,
+% pdfpagelabels, % makes the status line page labels the same as latex ones
+% bookmarks,
+% bookmarksnumbered,
+% pdfborder=0 0 0,
+% pdfpagemode=UseOutlines]{hyperref}
+\usepackage{styles/draftstamp}
+% \usepackage{subfigure}
+
+% \include{mymacros}
+\input{headers.tex}
+\input{macros.tex}
+
+\newcommand{\singlespace}{\renewcommand{\baselinestretch}{1.0}\normalsize}
+
+% Provides a draft mark at the top of the document. Comment this out
+% to remove it
+% \draftstamp{\today}{DRAFT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{My fancy title}
+
+\author{Author1$^{\ast}$ \and Author2$^{\dag}$
+% \\\\$^{\ast}$Carnegie Mellon University \and $^{\dag}$University of Texas at Austin\\\\
+}
+
+\date{March 2023}
+
+% \abstract{
+%   This is the abstract.  This report has good work in it.
+% }
+
+
+
+
+
+\keywords{Keyword1, keyword2, ...}
+
+\trnumber{CMU-CS-23-100}
+
+\citationinfo{
+$^{\ast}$Carnegie Mellon University, Pittsburgh, PA, USA \\
+$^{\dag}$Another university \\
+}
+
+%\arpasupport{fox}
+% \support{This research is supported by grants from the National
+%   Science Foundation and from IBM.}
+% \authorsupport{The author holds a Froboz Gradual Fellowship.}
+
+% \otherdisclaimer{NSF}
+
+% \support{Note, this work is incomplete (in-progress). This report serves to
+% document our exploration till now. Some groups found our preliminary
+% exploration useful, hence we wrote this report to share our findings.}
+
+\abstract{
+\input{sections/abstract.tex}
+}
+
+\begin{document}
+\input{post.tex}
+\renewcommand*{\thepage}{title-\arabic{page}}
+\maketitle
+\renewcommand*{\thepage}{\arabic{page}}
+
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+% \input{sections/related.tex}
+\input{sections/design.tex}
+\input{sections/evaluation.tex}
+\input{sections/acknowledgements.tex}
+\input{sections/availability.tex}
+
+\bibliographystyle{plainurl}
+{\small
+\bibliography{references.bib}
+}
+% \newpage
+% \appendix
+% \input{tex/appendix.tex}
+
+\end{document}

@@ -1,0 +1,56 @@
+\input{pre.tex}
+
+\documentclass[letterpaper,twocolumn,10pt]{article}
+\usepackage{styles/usenix-2020-09}
+
+% to be able to draw some self-contained figs
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\input{headers.tex}
+\input{macros.tex}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------------------------------
+\input{post.tex}
+
+%don't want date printed
+\date{}
+
+% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf Formatting Submissions for a USENIX Conference:\\
+  An (Incomplete) Example}
+
+%for single author (just remove % characters)
+\author{
+{\rm Your N.\ Here}\\
+Your Institution
+\and
+{\rm Second Name}\\
+Second Institution
+% copy the following lines to add more authors
+% \and
+% {\rm Name}\\
+%Name Institution
+} % end author
+
+\maketitle
+
+\input{sections/abstract.tex}
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+\input{sections/design.tex}
+\input{sections/acknowledgements.tex}
+\input{sections/availability.tex}
+
+%-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  LocalWords:  endnotes includegraphics fread ptr nobj noindent
+%%  LocalWords:  pdflatex acks

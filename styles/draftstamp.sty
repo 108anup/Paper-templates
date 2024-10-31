@@ -1,0 +1,36 @@
+% A simple style file to provide a draft marking in the background of
+% a file
+% Thank you to Will Uther who provided the base code that I rolled
+% into this package
+% ChangeLog
+% 1.1: shrunk and shifted the stamp so that it avoid the unprintable
+% area at the top of the page
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{draftstamp}
+          [2002/12/27 v1.1i Package to provide a draft mark]
+
+
+
+\RequirePackage{graphicx}
+\RequirePackage{eso-pic}
+\RequirePackage{color}
+
+%Got this from Will (will@cs.cmu.edu)
+%usage: \draftstamp{date}{label}
+\newcommand{\draftstamp}[2]{\definecolor{DraftGrey}{gray}{0.7}
+  \ClearShipoutPicture\AddToShipoutPicture{
+    \begin{minipage}[b][\paperheight][t]{\paperwidth}
+      \vspace{.13in}%to put this into the printable area of the page
+        \centering
+        \resizebox{!}{.87in}{
+            \textcolor{DraftGrey}{\renewcommand{\baselinestretch}{1.0}\normalsize
+                \begin{tabular}{c}
+                    #1 \\
+                    #2
+                \end{tabular}
+            }
+        }
+    \end{minipage}
+}}
+
+\endinput

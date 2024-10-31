@@ -1,0 +1,82 @@
+\input{pre.tex}
+\documentclass[sigconf, 10pt]{acmart}
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+% Copyright
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference info
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+\settopmatter{printacmref=false, printccs=false, printfolios=true}
+
+% DOI
+\acmDOI{}
+
+% ISBN
+\acmISBN{}
+
+%Conference
+\acmConference[Submitted for review to SIGCONF]{The 37th annual conference
+    of the ACM Special Interest Group on Data Communication (SIGCOMM)}{September
+    10--14, 2023}{New York City, NY, USA}
+%\acmConference[Submitted for review to SIGCOMM]{}
+\acmYear{2023}
+%\copyrightyear{}
+
+%% {} with no args suppresses printing of the price
+\acmPrice{}
+
+\input{headers.tex}
+\input{macros.tex}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------------------------------
+\input{post.tex}
+
+%don't want date printed
+\date{}
+
+% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{ACM Example}
+
+\author{Paper \# XXX, 12 pages + references + appendices}
+% \author{Firstname Lastname}
+% \authornote{Note}
+% \orcid{1234-5678-9012}
+% \affiliation{%
+%   \institution{Affiliation}
+%   \streetaddress{Address}
+%   \city{City} 
+%   \state{State} 
+%   \postcode{Zipcode}
+% }
+% \email{email@domain.com}
+
+% The default list of authors is too long for headers}
+\renewcommand{\shortauthors}{Anonymous et al.}
+
+\input{sections/abstract.tex}
+\maketitle
+
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+\input{sections/design.tex}
+\input{sections/acknowledgements.tex}
+\input{sections/availability.tex}
+
+%-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
